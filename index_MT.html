@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+  	<title>Forward Curve Money Transfer</title>
+  	<meta name="description" content="Forward Curve Money Transfer">
+  	<meta name="author" content="Parag Patil">
+  	<meta name="keywords" content="digital advertising">
+  	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0">
+
+  	
+<!-- 
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LcRIRgaAAAAABmzi4Gdsu6_GsLdA8PO5rhr6vX4"></script>
+
+
+
+<script type="text/javascript">
+ 
+grecaptcha.ready(function() {
+    // do request for recaptcha token
+    // response is promise with passed token
+        grecaptcha.execute('6LcRIRgaAAAAABmzi4Gdsu6_GsLdA8PO5rhr6vX4', {action:'validate_captcha'})
+                  .then(function(token) {
+            // add token value to form
+            var mobile_recaptchaResponse = document.getElementById('mobile_recaptchaResponse');
+            mobile_recaptchaResponse.value = token;
+            var xl_recaptchaResponse = document.getElementById('xl_recaptchaResponse');
+            xl_recaptchaResponse.value = token;  
+            var lg_recaptchaResponse = document.getElementById('lg_recaptchaResponse');
+            lg_recaptchaResponse.value = token;
+            var md_recaptchaResponse = document.getElementById('md_recaptchaResponse');
+            md_recaptchaResponse.value = token;
+            var sm_recaptchaResponse = document.getElementById('sm_recaptchaResponse');
+            sm_recaptchaResponse.value = token;
+
+        });
+    });
+
+ </script>
+          
+ -->
+
+<meta http-equiv="window-target" content="_top">  <!--prevents new page from being in smaller frame of old page-->
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-186650329-1">
+</script> -->
+
+<!-- <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-186650329-1');
+</script> -->
+
+
+
+<!--  Google Tag Manager -->
+
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N7HX5TT');</script> -->
+
+<!-- End Google Tag Manager -->
+
+
+
+<!--Facebook pixel here--> 
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+   
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">    
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+ 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@1,600&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap" rel="stylesheet">
+
+
+    <style>
+        .title {
+          background-color: rgba(255, 255, 255, 0.5);
+          border: solid 1px black;
+          text-align: center;
+          font-family: "EB Garamond", "Times New Roman", serif;
+          font-weight: bold;
+        }
+
+        .textbox {
+          background-color: rgba(255, 255, 255, 0.5);
+          border: solid 1px black;
+          font-family: "EB Garamond", "Times New Roman", serif;
+          font-weight: bold;
+        }
+
+        .button {
+          font-weight: bold;
+        }
+
+      /*XS (< 576px) screen size*/
+      @media screen and (orientation: portrait) {
+        .title-size {
+          font-size: 3.3vh;
+          height: 10vh;
+        }
+
+        .textbox-size {
+          font-size: 2.7vh;
+        }
+
+        .quote-size {
+          font-size: 3vh;
+        }
+
+        .row-height {
+          height: 150vh;
+        }
+
+        .button-size {
+          width: 20vh;
+          margin-bottom: 5vh;
+          font-size: 3vh;
+        }
+
+        .background {
+          background-image: url(mobilebackground.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 100%;
+          background-attachment: fixed;
+          background-position: center;
+        }
+
+        .seedpack-size {
+          width: 60vw;
+        }
+      }
+
+      /*Title text size for SM (>= 576px) viewport*/
+      @media screen and (min-width: 576px) and (max-width: 766px) and (orientation: portrait) {
+        .title-size {
+          font-size: 3.64vh;
+          height: 6vh;
+        }
+      }
+
+      /*Title text size for MD (>= 768px) viewport*/
+      @media screen and (min-width: 767px) and (orientation: portrait) {
+        .title-size {
+          font-size: 3.75vh;
+          height: 6vh;
+        }
+      }
+
+      @media screen and (orientation: landscape) {
+        .title-size {
+          font-size: 5vh;
+          height: 10vh;
+        }
+
+        .textbox-size {
+          font-size: 4.5vh;
+          width: 50vw;
+        }
+
+        .quote-size {
+          font-size: 4.75vh;
+        }
+
+        .row-height {
+          height: 165vh;
+        }
+
+        .button-size {
+          width: 200px;
+          margin-bottom: 25px;
+          font-size: 3vh;
+        }
+
+        .background2 {
+          background-image: url(seed1.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: auto;
+          background-position: center center;
+*/        }
+
+        .seedpack-size {
+          width: 40vw;
+        }
+      }
+
+      @media screen and (min-width: 1200px) {
+        .title-size {
+          font-size: 6vh;
+          height: 10vh;
+        }
+
+        .textbox-size {
+          font-size: 4vh;
+        }
+
+        .quote-size {
+          font-size: 5vh;
+        }
+
+        .row-height {
+          height: 150vh;
+        }
+
+        /*.col-height {
+          height: 80vh;
+        }*/
+
+        .button-size {
+          width: 20vw;
+          margin-bottom: 40px;
+          font-size: 5vh;
+        }
+
+        .background1 {
+          background-image: url(rsz_seed1.jpg);
+          background-repeat: no-repeat;
+          background-size: cover ;
+          height:1200px;
+          background-position:top center;
+                    border: 2px solid;
+     
+          
+        }
+
+        .test_img{ border-radius:15%;  }
+
+        .test_img1{ border-radius:7%; 
+
+        .seedpack-size {
+          width: 30vw;
+        }
+
+        .mt-n1{margin-top: -0.35rem !important;}
+      } 
+    </style>
+  </head>
+
+
+  <body>
+
+<!-- Google Tag Manager (noscript) -->
+
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7HX5TT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ -->
+<!-- End Google Tag Manager (noscript) -->
+
+  
+
+    <!--XXL (>= 1200px) screensize design-->
+    
+<div class=" col-xxl-12 d-none d-xxl-block">
+
+ <div class="h2 p-2 m-5 text-center font-weight-bold text-light col-8" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Peace of Mind: Lock in your money transfer rate with Forward Contracts</div> 
+ 
+ <div class="offset-1">
+      <img  src="AD_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+
+<div class="h3 p-2 m-5 text-center font-weight-bold text-light col-8" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Spot or Forward? Making the Right Choice for International Payments</div> 
+
+
+<div class="offset-1">
+      <img  src="AC_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+<div class="h3 p-2 m-5 text-center font-weight-bold text-light col-8" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Navigating Exchange Rates: Spot vs. Forward for Money Transfers</div> 
+
+
+<div class="offset-1">
+      <img  src="AB_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+
+
+
+
+
+<<!-- div class="list-group col-8 m-4 p-2 ">
+  
+  <a href="#" class="list-group-item list-group-item-action" style="background-color:#CACEE8;" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">
+        Digital Marketing Strategist&nbsp;&nbsp;&nbsp;
+        <img style="background-color:#CACEE8;" src="test_FB6.png"> &nbsp;&nbsp;
+        <i class="bi bi-star"></i>
+        <i class="bi bi-star"></i>
+        <i class="bi bi-star"></i>
+        <i class="bi bi-star"></i>
+      </h5>
+      <small>Leading Media Company</small>
+    </div> 
+    <p class="mb-1">marketeting Strategy worked wonders with improved Event measurements.</p>
+    <small class="">4 weeks into attributing events</small>
+  </a>
+ 
+</div>
+
+ -->
+
+<!-- <div class="h4 col-2 offset-3 p-2 border rounded-pill" style="background-color:#917D02;">&nbsp;&nbsp;&nbsp;FAQ &nbsp;&nbsp;<img src="counter1B.jpg"></div>
+
+
+<div class="border-0 m-5 p-2 ">  
+  <ul class="list-group border-0">
+  
+  <li class="list-group-item h4">What are UnAttributed Events?<span class="badge bg-primary rounded-pill">14</span> </li>
+  <li class="list-group-item h4">How does Event Attribution prevents duplication in reporting of multiple input data sources?<span class="badge bg-primary rounded-pill">85</span> </li>
+  <li class="list-group-item h4">How does Google Search & Meta attribute all Events?<span class="badge bg-primary rounded-pill">24</span> </li>
+  <li class="list-group-item h4">Will our Event Attribution data flow into GA4 or Adobe Analytics?<span class="badge bg-primary rounded-pill">34</span> </li>
+  <li class="list-group-item h4">Does not a Meta pixel, GA4 tag, Adobe tag or media pixel fire any time a conversion happens?<span class="badge bg-primary rounded-pill">94</span> </li>
+  <li class="list-group-item h4">Is there a limit on the number of events that can be attributed?<span class="badge bg-primary rounded-pill">44</span> </li> 
+  
+
+
+</ul>
+</div>  
+
+-->
+
+
+
+
+</div>
+
+<!-- end of -XXl-screen -->
+
+
+<!-- Xtra  large screen  -->
+
+<div class="container d-xl-block d-xxl-none col-xl-12 d-none">
+
+
+ <div class="m-5 h3 text-left text-justify font-weight-bold text-light gx-5" style="background-color:#6f2da8" ><i class="bi bi-bookmark-check"></i>Peace of Mind: Lock in your money transfer rate with Forward Contracts</div> 
+ 
+ <div class="offset-1">
+      <img  src="AD_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+<div class="h4 p-2 m-5 text-center font-weight-bold text-light col-xl-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Spot or Forward? Making the Right Choice for International Payments</div> 
+
+
+<div class="offset-1">
+      <img  src="AC_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+<div class="h4 p-2 m-5 text-center font-weight-bold text-light col-xl-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Navigating Exchange Rates: Spot vs. Forward for Money Transfers</div> 
+
+
+<div class="offset-1">
+      <img  src="AB_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+
+</div>
+<!-- end of xtra large screen -->
+
+<!-- large screen -->
+
+
+
+<div class="row container d-lg-block d-xl-none col-lg-12 d-none">
+  
+<div class=" m-4 h4 text-center text-justify font-weight-bold text-light col-lg-12" style="background-color:#6f2da8" ><i class="bi bi-bookmark-check"></i>Peace of Mind: Lock in your money transfer rate with Forward Contracts</div> 
+
+
+ 
+ <div class="offset-1">
+      <img  src="AD_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+<div class="h5 p-2 m-5 text-center font-weight-bold text-light col-lg-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Spot or Forward? Making the Right Choice for International Payments</div> 
+
+
+<div class="offset-1">
+      <img  src="AC_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+<div class="h5 p-2 m-5 text-center font-weight-bold text-light col-lg-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Navigating Exchange Rates: Spot vs. Forward for Money Transfers</div> 
+
+
+<div class="offset-1">
+      <img  src="AB_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+    </div>
+
+
+<!-- end of large screen -->
+
+
+
+<!-- medium screen -->
+
+<div class="d-none d-md-block d-lg-none row container col-md-12">
+
+      
+<div class=" m-4 h3 text-center font-weight-bold text-light col-md-12" style="background-color:#6f2da8" ><i class="bi bi-bookmark-check"></i> Leverage the forward curve, lock in your money transfer rate</div> 
+
+
+ 
+ <div class="offset-1">
+      <img  src="AD_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+<div class="h5 p-2 m-5 text-center font-weight-bold text-light col-md-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Spot or Forward? Making the Right Choice for International Payments</div> 
+
+
+<div class="offset-1">
+      <img  src="AC_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+<div class="h5 p-2 m-5 text-center font-weight-bold text-light col-md-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Navigating Exchange Rates: Spot vs. Forward for Money Transfers</div> 
+
+
+<div class="offset-1">
+      <img  src="AB_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+ 
+
+      
+
+    </div>
+
+
+
+
+
+<!-- end of medium screen -->
+
+
+<!-- small screen -->
+
+<div class="d-none d-sm-block d-md-none row container col-sm-12">
+
+<div class=" m-4 h3 text-center font-weight-bold text-light col-md-12" style="background-color:#6f2da8" ><i class="bi bi-bookmark-check"></i> Leverage the forward curve, lock in your money transfer rate</div> 
+
+
+ 
+ <div class="offset-1">
+      <img  src="AD_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+<div class="h5 p-2 m-5 text-center font-weight-bold text-light col-md-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Spot or Forward? Making the Right Choice for International Payments</div> 
+
+
+<div class="offset-1">
+      <img  src="AC_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+<div class="h5 p-2 m-5 text-center font-weight-bold text-light col-md-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Navigating Exchange Rates: Spot vs. Forward for Money Transfers</div> 
+
+
+<div class="offset-1">
+      <img  src="AB_no.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+      
+
+    </div>
+
+
+
+
+<!-- end of small screen -->
+
+
+<!-- xtra small screen -responsive-->
+
+<div class="row container d-block d-sm-none">
+
+    
+
+<div class=" p-1 m-3 h6 text-left font-weight-bold text-light col-md-12" style="background-color:#6f2da8" ><i class="bi bi-bookmark-check"></i> Leverage the forward curve, lock in your money transfer rate</div> 
+
+
+ 
+ <div class="offset-0">
+      <img  src="noD_total.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+<div class="h6 p-1 m-3 text-left font-weight-bold text-light col-md-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Spot or Forward? Making the Right Choice for International Payments</div> 
+
+
+<div class="offset-0">
+      <img  src="noC_total.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+<div class="h6 p-1 m-3 text-left font-weight-bold text-light col-md-12" style="background-color:#6f2da8"><i class="bi bi-bookmark-check"></i>Navigating Exchange Rates: Spot vs. Forward for Money Transfers</div> 
+
+
+<div class="offset-0">
+      <img  src="noB_total.jpg" class="img-fluid border border-0 test_img1"> 
+</div>
+ 
+
+
+
+
+    
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- end of xtra small responsive screen -->
+
+
+
+
+  </body>
+
+  <footer>
+
+
+
+
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  </footer>
+  </html>
